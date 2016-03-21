@@ -7,6 +7,11 @@ class ArticlesController < ApplicationController
 			@article = Article.new  # Article is the class name
 	end
 
+	def edit
+		@article = Article.find(params[:id]) 
+	end
+
+
 	def create 
 	# 	render plain: params[:article].inspect
 	@article = Article.new(article_params)
@@ -19,6 +24,16 @@ class ArticlesController < ApplicationController
 		end 
 	#	@article.save
 	#	redirect_to article_path(@article) 
+	end 
+
+	def update 
+		@article = Article.find(params[:id])
+		if @article.update(article_params)
+			flash[:notice] = "Updated successfully!"
+			redirect_to article_path(@article)
+		else
+			render 'edit'
+		end
 	end 
 
 	def show
