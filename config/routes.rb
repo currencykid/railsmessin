@@ -5,7 +5,6 @@ root  'welcome#home'
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
- get  'articles/new' => 'articles#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -3,6 +3,17 @@ $navbar-default-bg: #7F00FF;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav.navbar-nav li a {
+	color: #fff; 
+	height: 60px;
+	line-height: 20px;
+}
+
+/*-- change navbar dropdown color --*/
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+	color:#000;
+}
+
 #logo {
 	float: left; 
 	font-size: 1.7em; 
@@ -18,7 +29,7 @@ $navbar-default-bg: #7F00FF;
 }
 
 .center {
-text-align: center; 	
+	text-align: center; 	
 }
 
 .jumbotron{
@@ -40,11 +51,33 @@ text-align: center;
 	background-color: #000;
 }
 
+.article-actions {
+	border-top: 1px solid #eaeaea;
+	padding-top: 5px; 
+
+}
+
+.description {
+	margin-top: 0; 
+}
+
+.article-title {
+	font-weight: bold;
+	font-size: 1.5em;
+
+}
+
+.article-body{
+border-top: 1px solid #eaeaea;
+padding-top: 15px; 
+padding-bottom: 15px; 
+}
+
 footer {
-margin-top: 35px;
-padding-top: 5px; 
-border-top: 1px solid #eaeaea; 
-color: #777; 
+	margin-top: 35px;
+	padding-top: 5px; 
+	border-top: 1px solid #eaeaea; 
+	color: #777; 
 }
 
 footer a:hover {
@@ -64,3 +97,5 @@ footer ul li {
 	float: left;
 	margin-left: 15px;
 }
+
+
