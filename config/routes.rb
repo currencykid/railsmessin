@@ -4,11 +4,16 @@ root  'welcome#home'
 
 	get 'signup', to: 'users#new'  #users ctrl, new action
 
+
+
 	#can be used as alternative to resources :users
 	#post 'users', to: 'users#create'
 
 	resources :users, except: [:new]
 	
+	get 'login' => 'sessions#new' 
+	post 'login' => 'sessions#create'
+	delete 'logout' => 'sessions#destroy'
 	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
