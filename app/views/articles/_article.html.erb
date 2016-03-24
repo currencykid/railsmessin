@@ -8,9 +8,11 @@
 				<div class="article-body">
 
 					<%= truncate(x.description,length: 100) %> 
+	<% if x.user %> 
 				<div class=" article-created-by"> 
 					Created by <%= x.user.username if x.user %> 
 			</div> 
+		<% end %> 
 				<div class="article-post-date">
 					posted <%= time_ago_in_words(x.created_at) %> ago <br> 
 					last updated <%= time_ago_in_words(x.updated_at) %> ago
