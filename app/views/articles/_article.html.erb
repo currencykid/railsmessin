@@ -13,21 +13,23 @@
 							Created by <%= x.user.username if x.user %> 
 					</div> 
 				<% end %> 
+				</div> 
 				<div class="article-post-date">
 					posted <%= time_ago_in_words(x.created_at) %> ago <br> 
 					last updated <%= time_ago_in_words(x.updated_at) %> ago
 					<!--				<%= x.created_at.strftime("%b %e '%y at  %I:%H %P")%>  -->			</div> 
 
-				<% if logged_in? && current_user == x.user %> 
+				<% if logged_in? && (current_user == x.user  || current_user.admin? ) %> 
 					<div class="article-actions"> 
 						<%= link_to "Edit this article" , edit_article_path(x), class: "btn btn-sm btn-primary"  %>  || 
 						<%= link_to "Delete this article" ,article_path(x) , method: :delete, 
 						data: {confirm: "Are you sure?"} , class: "btn btn-sm btn-danger" %> 
 				</div>
 			<% end %> 
-				</div> 
 			</div> 
 		</div> 
+	</div> 
 
-	<% end %> 
+<% end %> 
+
 
